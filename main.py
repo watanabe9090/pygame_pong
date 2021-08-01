@@ -13,7 +13,7 @@ class Game():
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.font = pygame.font.SysFont('Arial', 32)
         self.running = False
-        pygame.display.set_caption('ぽン')
+        pygame.display.set_caption('Pong')
 
     def start(self):
         self.running = True
