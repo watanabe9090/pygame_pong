@@ -40,7 +40,7 @@ class Game():
 
     def update(self):
         self.player.update()
-        self.enemy.update(self.ball.y)
+        self.enemy.update(self.ball.y+self.ball.side/2)
         self.ball.update()
         # Player Point
         if(self.ball.x > SCREEN_WIDTH-self.ball.side):
