@@ -10,14 +10,14 @@ class Enemy:
         self.shape = pygame.Rect(self.x, self.y, self.width, self.height);
         self.color = (255, 255, 255);
         self.screen = screen;
-        self.speed_y = 3;
-        self.level = 10;
+        self.speed_y = 5;
+        self.difficult = 0.80;
 
     def update(self, chased_y):
         if((self.y+self.height/2) < chased_y):
-            self.y += self.speed_y + self.level/2;
+            self.y += self.speed_y * self.difficult;
         if((self.y+self.height/2) > chased_y):
-            self.y -= self.speed_y + self.level/2;
+            self.y -= self.speed_y * self.difficult;
 
         #Collisions
         if (self.y+self.height >= SCREEN_HEIGHT):

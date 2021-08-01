@@ -40,7 +40,7 @@ class Game():
 
     def update(self):
         self.player.update()
-        self.enemy.update(self.player.y)
+        self.enemy.update(self.ball.y)
         self.ball.update()
         # Player Point
         if(self.ball.x > SCREEN_WIDTH-self.ball.side):
@@ -55,8 +55,10 @@ class Game():
         
         if self.ball.shape.colliderect(self.player.shape) and self.ball.speed_x < 0:
             self.ball.speed_x *= -1
+            self.ball.increase_speed()
         if self.ball.shape.colliderect(self.enemy.shape) and self.ball.speed_x > 0:
             self.ball.speed_x *= -1
+            self.ball.increase_speed()
         # Scores
         if(self.player_score.score >= MAX):
             pygame.quit()
